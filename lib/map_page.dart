@@ -43,9 +43,7 @@ class _HomePageState extends State<MapPage> {
         bearing = 360 + bearing;
       }
 
-      setState(() {
-        _bearingRad = degToRadian(bearing);
-      });
+      _bearingRad = degToRadian(bearing);
 
       return LocationMarkerHeading(
         heading: _bearingRad,
@@ -291,8 +289,7 @@ class _HomePageState extends State<MapPage> {
       bearing: _bearingRad,
     );
     _positionStreamController.add(newLocation);
-    setState(() {
-      _previousLocation = newLocation;
-    });
+
+    _previousLocation = newLocation;
   }
 }
